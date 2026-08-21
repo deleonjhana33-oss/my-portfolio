@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JHANA ROSE B. DE LEON | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* ========================================
+           RESET & GENERAL STYLES
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+
+            font-family: "DM Sans", sans-serif;
+            color: #4a3040;
+            background: #fff3f8;
+        }
+
+
+        /* ========================================
+           INTRO / MAIN SECTION
+        ======================================== */
+
+        .intro {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: grid;
+            place-items: center;
+
+            text-align: center;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    #ffd9e8,
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 88% 82%,
+                    #ddd4ff,
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff8fb,
+                    #fdf0f6 55%,
+                    #f6f1ff
+                );
+        }
+
+
+        /* ========================================
+           DECORATIVE CIRCLES
+        ======================================== */
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .c1 {
+            width: 360px;
+            height: 360px;
+
+            top: -170px;
+            left: -100px;
+
+            background: #f4aeca;
+            opacity: 0.25;
+        }
+
+        .c2 {
+            width: 280px;
+            height: 280px;
+
+            right: -100px;
+            bottom: -100px;
+
+            background: #cfc4ff;
+            opacity: 0.35;
+        }
+
+        .c3 {
+            width: 90px;
+            height: 90px;
+
+            right: 13%;
+            top: 15%;
+
+            background: #ffd36e;
+            opacity: 0.7;
+        }
+
+
+        /* ========================================
+           SPARKLES
+        ======================================== */
+
+        .spark {
+            position: absolute;
+
+            color: #d978a1;
+            font-size: 22px;
+
+            animation: twinkle 2.7s infinite ease-in-out;
+        }
+
+        .s1 {
+            top: 20%;
+            left: 16%;
+        }
+
+        .s2 {
+            top: 32%;
+            right: 18%;
+
+            font-size: 16px;
+            animation-delay: 1s;
+        }
+
+        .s3 {
+            bottom: 22%;
+            left: 20%;
+
+            font-size: 18px;
+            animation-delay: 1.6s;
+        }
+
+        .s4 {
+            bottom: 17%;
+            right: 22%;
+
+            animation-delay: 0.7s;
+        }
+
+
+        /* ========================================
+           MAIN CONTENT
+        ======================================== */
+
+        .content {
+            position: relative;
+            z-index: 2;
+
+            width: min(90%, 850px);
+
+            animation: appear 1s ease both;
+        }
+
+
+        /* ========================================
+           WELCOME BADGE
+        ======================================== */
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border: 1px solid #efbfd3;
+            border-radius: 100px;
+
+            background: #ffffff99;
+            color: #b65e83;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+
+        /* ========================================
+           MAIN TITLE
+        ======================================== */
+
+        h1 {
+            margin: 22px 0 16px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(4rem, 10vw, 8.2rem);
+            line-height: 0.88;
+            letter-spacing: -4px;
+
+            color: #4a3040;
+        }
+
+        h1 span {
+            color: #d76c9a;
+            font-style: italic;
+        }
+
+
+        /* ========================================
+           NAME & COURSE
+        ======================================== */
+
+        .name {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 700;
+        }
+
+        .course {
+            margin-top: 7px;
+
+            color: #927382;
+            font-size: 0.85rem;
+        }
+
+
+        /* ========================================
+           ENTER PORTFOLIO BUTTON
+        ======================================== */
+
+        .enter {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+
+            margin-top: 32px;
+            padding: 14px 28px;
+
+            border-radius: 100px;
+
+            background: #d76c9a;
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            box-shadow: 0 12px 28px #d76c9a44;
+
+            transition: 0.25s;
+        }
+
+        .enter:hover {
+            transform: translateY(-4px);
+
+            background: #c95d8c;
+
+            box-shadow: 0 16px 35px #d76c9a59;
+        }
+
+        .arrow {
+            transition: 0.25s;
+        }
+
+        .enter:hover .arrow {
+            transform: translateX(5px);
+        }
+
+
+        /* ========================================
+           SKILLS
+        ======================================== */
+
+        .skills {
+            margin-top: 25px;
+
+            color: #a28291;
+
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .dot {
+            margin: 0 8px;
+            color: #df9bb8;
+        }
+
+
+        /* ========================================
+           MINI MESSAGE
+        ======================================== */
+
+        .mini {
+            width: 225px;
+
+            margin: 29px auto 0;
+            padding: 11px 15px;
+
+            border: 1px solid #efd0de;
+            border-radius: 18px;
+
+            background: #ffffff99;
+            color: #966f80;
+
+            font-size: 10px;
+
+            box-shadow: 0 10px 30px #87506912;
+        }
+
+        .mini strong {
+            color: #d06a97;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        .footer {
+            position: absolute;
+
+            bottom: 23px;
+            left: 0;
+            right: 0;
+
+            color: #b49aa7;
+
+            font-size: 0.62rem;
+            letter-spacing: 1.5px;
+        }
+
+
+        /* ========================================
+           PROGRESS BAR
+        ======================================== */
+
+        .progress {
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background: #f1dbe6;
+        }
+
+        .progress span {
+            display: block;
+
+            width: 0;
+            height: 100%;
+
+            background: #d76c9a;
+
+            animation: load 2.2s ease forwards;
+        }
+
+
+        /* ========================================
+           ANIMATIONS
+        ======================================== */
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(22px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.35;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.15) rotate(12deg);
+            }
+        }
+
+        @keyframes load {
+            to {
+                width: 100%;
+            }
+        }
+
+
+        /* ========================================
+           MOBILE RESPONSIVE DESIGN
+        ======================================== */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .badge {
+                font-size: 8px;
+                letter-spacing: 2px;
+            }
+
+            .skills {
+                max-width: 320px;
+
+                margin-left: auto;
+                margin-right: auto;
+
+                line-height: 2;
+            }
+
+            .dot {
+                margin: 0 4px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         INTRO SECTION
+    ======================================== -->
+
+    <section class="intro">
+
+        <!-- Decorative Circles -->
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+
+
+        <!-- Decorative Sparkles -->
+        <div class="spark s1">✦</div>
+        <div class="spark s2">✧</div>
+        <div class="spark s3">♡</div>
+        <div class="spark s4">✦</div>
+
+
+        <!-- Main Content -->
+        <div class="content">
+
+            <!-- Welcome Badge -->
+            <div class="badge">
+                Welcome to my portfolio
+            </div>
+
+
+            <!-- Main Heading -->
+            <h1>
+                Hello,<br>
+                <span>I'm Jhana.</span>
+            </h1>
+
+
+            <!-- Name -->
+            <div class="name">
+                JHANA ROSE B. DE LEON
+            </div>
+
+
+            <!-- Course -->
+            <div class="course">
+                BS Information Technology Student
+            </div>
+
+
+            <!-- Enter Button -->
+            <a href="Index.html" class="enter">
+                ENTER PORTFOLIO
+                <span class="arrow">♡</span>
+            </a>
+
+
+            <!-- Skills -->
+            <div class="skills">
+                HTML
+                <span class="dot">•</span>
+
+                CSS
+                <span class="dot">•</span>
+
+                JAVASCRIPT
+                <span class="dot">•</span>
+
+                C#
+                <span class="dot">•</span>
+
+                JAVA
+                <span class="dot">•</span>
+
+                UI/UX
+            </div>
+
+
+            <!-- Personal Message -->
+            <div class="mini">
+                ✿
+                <strong>Creating • Learning • Growing</strong>
+                ✿
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="footer">
+            JHANA ROSE B. DE LEON
+            &nbsp; • &nbsp;
+            2026
+        </div>
+
+
+        <!-- Loading Progress -->
+        <div class="progress">
+            <span></span>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
